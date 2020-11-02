@@ -6,13 +6,25 @@ class App extends Component {
     super(props);
     this.intervalId = null;
     this.state = {
-      time: new Date().toLocaleDateString("en-US")
+      time: new Date().toLocaleDateString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: true
+      })
     };
   }
 
   componentDidMount() {
     this.intervalId = setInterval(() => {
-      this.setState({time: new Date().toLocaleDateString("en-US")});
+      this.setState({
+        time: new Date().toLocaleDateString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hour12: true
+        })
+      });
     }, 1000);
   }
 
