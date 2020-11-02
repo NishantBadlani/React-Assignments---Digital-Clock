@@ -6,7 +6,7 @@ class App extends Component {
     super(props);
     this.intervalId = null;
     this.state = {
-      time: ""
+      time: new Date().toLocaleDateString("en-US")
     };
   }
 
