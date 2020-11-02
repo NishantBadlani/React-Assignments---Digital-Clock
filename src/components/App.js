@@ -2,8 +2,8 @@ import React, {Component, useState} from "react";
 import "../styles/App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.intervalId = null;
     this.state = {
       time: ""
@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     this.intervalId = setInterval(() => {
-      this.setState({time: new Date().toLocaleDateString()});
+      this.setState({time: new Date().toLocaleDateString("en-US")});
     }, 1000);
   }
 
